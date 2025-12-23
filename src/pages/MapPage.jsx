@@ -211,24 +211,35 @@ export default function MapPage() {
         setDrawerOpen,
         photoMarkersCleanupRef
       );
-      map.on("zoomend", () =>
-        syncPhotoMarkers(
-          map,
-          filteredCondos,
-          setSelected,
-          setDrawerOpen,
-          photoMarkersCleanupRef
-        )
-      );
-      map.on("moveend", () =>
-        syncPhotoMarkers(
-          map,
-          filteredCondos,
-          setSelected,
-          setDrawerOpen,
-          photoMarkersCleanupRef
-        )
-      );
+
+      // Track previous zoom level to avoid unnecessary updates
+      let lastZoomLevel = map.getZoom();
+      let wasAboveThreshold = lastZoomLevel >= PHOTO_PIN_ZOOM;
+
+      const smartSync = () => {
+        const currentZoom = map.getZoom();
+        const isAboveThreshold = currentZoom >= PHOTO_PIN_ZOOM;
+
+        // Only update if we crossed the threshold or moved significantly when above threshold
+        if (
+          wasAboveThreshold !== isAboveThreshold ||
+          (isAboveThreshold && Math.abs(currentZoom - lastZoomLevel) > 0.5)
+        ) {
+          syncPhotoMarkers(
+            map,
+            filteredCondos,
+            setSelected,
+            setDrawerOpen,
+            photoMarkersCleanupRef
+          );
+          lastZoomLevel = currentZoom;
+          wasAboveThreshold = isAboveThreshold;
+        }
+      };
+
+      // Only update on movement end to avoid lag during interaction
+      map.on("zoomend", smartSync);
+      map.on("moveend", smartSync);
     });
 
     return () => {
@@ -316,12 +327,7 @@ function syncPhotoMarkers(map, condos, setSelected, setDrawerOpen, cleanupRef) {
     el.className = "photo-pin";
     el.type = "button";
     el.title = c.name;
-
-    const img = document.createElement("img");
-    img.src = c.pinImageUrl || c.gallery?.[0] || "";
-    img.alt = c.name;
-    img.loading = "lazy";
-    el.appendChild(img);
+    el.textContent = c.name;
 
     el.onclick = () => {
       setSelected(c);

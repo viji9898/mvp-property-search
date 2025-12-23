@@ -130,7 +130,7 @@ export const condos = [
   {
     id: "cccmall-001",
     slug: "colombo-city-centre-mall-and-residences-colombo-03",
-    name: "Colombo City Centre Mall and Residences",
+    name: "Colombo City Centre",
     city: "Colombo",
     area: "Colombo 03",
     address: "Colombo 03, Sri Lanka",
