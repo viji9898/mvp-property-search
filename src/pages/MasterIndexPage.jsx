@@ -57,7 +57,7 @@ export default function MasterIndexPage() {
       dataIndex: "name",
       key: "name",
       render: (_, c) => (
-        <Space direction="vertical" size={0}>
+        <Space orientation="vertical" size={0}>
           <Link to={`/condominiums/${c.slug}`} style={{ fontWeight: 600 }}>
             {c.name}
           </Link>
@@ -146,7 +146,7 @@ export default function MasterIndexPage() {
 
   return (
     <div style={{ padding: 16, width: "100vw", minHeight: "100vh" }}>
-      <Space direction="vertical" style={{ width: "100%" }} size="middle">
+      <Space orientation="vertical" style={{ width: "100%" }} size="middle">
         <Space
           align="center"
           style={{ justifyContent: "space-between", width: "100%" }}

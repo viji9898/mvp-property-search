@@ -38,3 +38,93 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
   background: #f5f5f5;
 }
+
+/* Search row layout */
+.npl-searchbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.npl-searchbtn {
+  border-radius: 999px !important;
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+}
+
+.npl-chip .ant-select-selector {
+  border-radius: 999px !important;
+}
+
+/* Cards grid */
+.npl-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .npl-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 900px) {
+  .npl-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .npl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.npl-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.npl-cover {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.npl-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.npl-cover-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f0f0, #fafafa);
+}
+
+.npl-pill {
+  border-radius: 999px !important;
+}
+
+/* Photo pin (if not already present) */
+.photo-pin {
+  width: 64px;
+  height: 64px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 16px;
+  transform: translateY(-6px);
+}
+.photo-pin img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 3px solid #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  background: #f5f5f5;
+}

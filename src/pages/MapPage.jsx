@@ -285,7 +285,10 @@ export default function MapPage() {
         </Space>
       </div>
 
-      <div ref={mapContainerRef} style={{ position: "relative" }} />
+      <div
+        ref={mapContainerRef}
+        style={{ position: "relative", height: "100%", minHeight: "400px" }}
+      />
 
       <CondoDrawer
         open={drawerOpen}
@@ -348,7 +351,7 @@ function CondoDrawer({ open, condo, onClose }) {
         <Text type="secondary">Select a condo pin to preview details.</Text>
       ) : (
         <Card bordered>
-          <Space direction="vertical" style={{ width: "100%" }} size="middle">
+          <Space orientation="vertical" style={{ width: "100%" }} size="middle">
             <Space wrap>
               <Tag>{condo.area}</Tag>
               <Tag
@@ -421,7 +424,7 @@ function CondoDrawer({ open, condo, onClose }) {
               </div>
             </div>
 
-            <Space style={{ width: "100%" }} direction="vertical">
+            <Space style={{ width: "100%" }} orientation="vertical">
               <Button type="primary" block>
                 <Link to={`/condominiums/${condo.slug}`}>
                   View full details
