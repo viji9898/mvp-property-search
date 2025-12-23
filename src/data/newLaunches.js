@@ -117,8 +117,8 @@ export const newLaunches = [
     ],
 
     gallery: [
-      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/gallery/1.jpg",
-      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/gallery/2.jpg",
+      "https://customer-apps-techhq.s3.eu-west-2.amazonaws.com/mvp-property-search/new-launches/viman/gallery/render-courtyard.webp",
+      "https://customer-apps-techhq.s3.eu-west-2.amazonaws.com/mvp-property-search/new-launches/viman/gallery/render-garden.webp",
     ],
     pinImageUrl:
       "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/pins/96.webp",
@@ -139,7 +139,8 @@ export const newLaunches = [
     tenure: "Freehold",
     propertyType: "Condominium",
     completionYear: 2028,
-    coverImageUrl: "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/cover.jpg",
+    coverImageUrl:
+      "https://customer-apps-techhq.s3.eu-west-2.amazonaws.com/mvp-property-search/new-launches/viman/cover/render-pool-residences.jpg",
 
     amenities: [
       "Gym",
