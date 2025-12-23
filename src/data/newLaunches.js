@@ -87,4 +87,67 @@ export const newLaunches = [
     completionYear: 2029, // number
     coverImageUrl: "https://.../cover.jpg", // use first gallery if not set
   },
+  {
+    id: "nl-003",
+    slug: "viman-ja-ela",
+    name: "VIMAN Ja-Ela",
+    city: "Ja-Ela",
+    area: "Ja-Ela",
+    address: "525, Colombo-Negombo Road, Ja-Ela",
+    position: { lat: 7.060619042508646, lng: 79.89544706847356 },
+
+    status: "Pre-Selling",
+    developer: "John Keells Properties",
+    expectedCompletionYear: 2028,
+
+    floors: 4,
+    units: 418,
+    unitMix: ["1BR", "2BR"],
+
+    pricing: {
+      fromLkr: 32800000,
+      toLkr: 42000000,
+      notes: "Unit sizes 800-1000 sqft",
+    },
+
+    keyHighlights: [
+      "Prime Colombo-Negombo Road location",
+      "Comprehensive family amenities",
+      "Compact and efficient unit designs",
+    ],
+
+    gallery: [
+      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/gallery/1.jpg",
+      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/gallery/2.jpg",
+    ],
+    pinImageUrl:
+      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/pins/96.webp",
+
+    brochureUrl:
+      "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/brochure.pdf",
+    websiteUrl: "https://johnkeells.com",
+
+    enquiry: {
+      whatsappPrefill:
+        "Hi, I'm interested in VIMAN Ja-Ela (pre-sale). Please share price list, availability, and payment plan.",
+    },
+
+    // recommended fields
+    priceFromLkr: 32800000,
+    priceToLkr: 42000000,
+    bedrooms: [1, 2],
+    tenure: "Freehold",
+    propertyType: "Condominium",
+    completionYear: 2028,
+    coverImageUrl: "https://YOUR_CDN_OR_S3/new-launches/viman-ja-ela/cover.jpg",
+
+    amenities: [
+      "Gym",
+      "Swimming Pool",
+      "Kids Play Area",
+      "Club House",
+      "Restaurant",
+      "Lift",
+    ],
+  },
 ];
